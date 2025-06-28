@@ -90,6 +90,17 @@ body {
   margin: 3rem 0;
 }
 
+.game-container .reset-button {
+  padding: 1rem 2rem;
+  background-color: #fda085;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 0 2rem;
