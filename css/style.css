@@ -99,6 +99,13 @@ body {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 500;
+  transition: transform 250ms ease;
+}
+.game-container .reset-button button:hover {
+  transform: scale(1.1);
+}
+.game-container .reset-button button:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {

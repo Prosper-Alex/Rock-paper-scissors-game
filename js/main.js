@@ -87,21 +87,6 @@ function disableButtons() {
   scissors.disabled = true;
 }
 
-function resetGame() {
-  scores.computer = 0;
-  scores.player = 0;
-  lives.computer = 3;
-  lives.player = 3;
-  renderScores();
-  renderLives();
-  message.innerHTML = "Choose Rock, Paper, or Scissors!";
-  rock.disabled = false;
-  paper.disabled = false;
-  scissors.disabled = false;
-}
-
-document.getElementById("reset").addEventListener("click", resetGame);
-
 rock.addEventListener("click", function () {
   playerOption(1);
 });
