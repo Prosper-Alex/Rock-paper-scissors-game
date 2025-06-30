@@ -90,7 +90,7 @@ body {
   margin: 3rem 0;
 }
 
-.game-container .reset-button {
+.reset-button {
   padding: 1rem 2rem;
   background-color: #fda085;
   color: #fff;
@@ -99,13 +99,31 @@ body {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 500;
-  transition: transform 250ms ease;
+  cursor: pointer;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  animation: pulseGlow 2s infinite;
 }
-.game-container .reset-button button:hover {
+
+.reset-button:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(253, 160, 133, 0.6);
 }
-.game-container .reset-button button:active {
+
+.reset-button:active {
   transform: scale(0.95);
+}
+
+/* Animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(253, 160, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(253, 160, 133, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(253, 160, 133, 0.7);
+  }
 }
 
 @media (max-width: 768px) {

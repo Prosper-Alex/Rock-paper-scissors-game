@@ -4,6 +4,7 @@ const scissors = document.getElementById("scissors");
 const message = document.getElementById("message");
 const scoreBoard = document.getElementById("score-board");
 const livesBoard = document.getElementById("lives-board");
+const resetButton = document.getElementById("reset-button");
 
 const scores = {
   computer: 0,
@@ -16,8 +17,7 @@ const lives = {
 };
 
 function computerOption() {
-  const option = Math.random();
-  return Math.floor(option * 3 + 1);
+  return Math.floor(Math.random() * 3 + 1);
 }
 
 function getOptionName(option) {
@@ -87,14 +87,24 @@ function disableButtons() {
   scissors.disabled = true;
 }
 
-rock.addEventListener("click", function () {
-  playerOption(1);
-});
+function enableButtons() {
+  rock.disabled = false;
+  paper.disabled = false;
+  scissors.disabled = false;
+}
 
-paper.addEventListener("click", function () {
-  playerOption(2);
-});
+function resetGame() {
+  scores.computer = 0;
+  scores.player = 0;
+  lives.computer = 3;
+  lives.player = 3;
+  enableButtons();
+  message.innerHTML = "Game restarted! Make your move.";
+  renderScores();
+  renderLives();
+}
 
-scissors.addEventListener("click", function () {
-  playerOption(3);
-});
+rock.addEventListener("click", () => playerOption(1));
+paper.addEventListener("click", () => playerOption(2));
+scissors.addEventListener("click", () => playerOption(3));
+resetButton.addEventListener("click", resetGame);
